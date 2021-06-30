@@ -142,12 +142,12 @@ int DevSerial::open_uart()
 
 			serial_ctl.flags |= ASYNC_LOW_LATENCY;
 
-			if (ioctl(_uart_fd, TIOCSSERIAL, &serial_ctl) < 0) {
-				int errno_bkp = errno;
-				printf("\033[0;31m[ protocol__splitter ]\tError while trying to write serial port latency: %d\033[0m\n", errno);
-				close();
-				return -errno_bkp;
-			}
+			//if (ioctl(_uart_fd, TIOCSSERIAL, &serial_ctl) < 0) {
+			//	int errno_bkp = errno;
+			//	printf("\033[0;31m[ protocol__splitter ]\tError while trying to write serial port latency: %d\033[0m\n", errno);
+			//	close();
+			//	return -errno_bkp;
+			//}
 		}
 #endif
 
