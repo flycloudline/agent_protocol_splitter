@@ -323,10 +323,10 @@ ssize_t DevSerial::read()
 	// which usually means that the protocol splitter on the FMU is not being
 	// used and so no protocol splitter header is being used
 	if (mavlink_passthrough.load()) {
-		if (!_mavlink_passthrough_noticed) {
-			printf("\033[1;33m[ protocol__splitter ]\tUART link: Changed to MAVLink passthrough as no protocol splitter headers were parsed\033[0m\n");
-			_mavlink_passthrough_noticed = true;
-		}
+	//	if (!_mavlink_passthrough_noticed) {
+	//		printf("\033[1;33m[ protocol__splitter ]\tUART link: Changed to MAVLink passthrough as no protocol splitter headers were parsed\033[0m\n");
+	//		_mavlink_passthrough_noticed = true;
+	//	}
 
 		objects->mavlink2->udp_write(_buffer, _buf_size);
 		ret += _buf_size;
